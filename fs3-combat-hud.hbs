@@ -1,0 +1,103 @@
+
+<div class="table-responsive fs3-combat-hud">
+
+<table class="table table-striped">
+<thead>
+    <th class="combat-header-name">Name (Vehicle)</th>
+    <th class="combat-header-weapon">Weapon</th>
+    <th class="combat-header-armor">Armor</th>
+    <th class="combat-header-stance">Stance</th>
+    <th class="combat-header-action">Action</th>
+    <th class="combat-header-edit"></th>
+
+</thead>
+
+<tbody>
+
+{{#each this.combat.teams as |t| }}
+
+<tr><td colspan="6" class="combat-hud-team"><h3>Team {{t.team}}
+  
+  {{#if t.name}}
+  ({{t.name}})
+  {{/if}}
+
+</h3></td></tr>
+
+    {{#each t.combatants as |c| }}
+    
+    <tr>
+        <td>
+          <div class="combat-hud-combatant">
+            <div class="combat-hud-combatant-name">{{#if c.is_npc}}
+            {{c.name}}
+          {{else}}
+            <LinkTo @route="char" @model={{c.name}} target="_blank">{{c.name}}</LinkTo>
+          {{/if}}
+            {{#if c.vehicle}}
+              ({{c.vehicle}})
+            {{/if}}
+            </div>
+            {{#if c.is_ko}}
+            <div class="combat-hud-combatant-damage">
+              <b>DMG:</b>
+              <button {{on "click" (fn this.showDamage c)}} class="btn-link">
+                <div class="combat-hud-ko">
+                  <i class="fa fa-crosshairs" aria-label="Knocked Out"></i>
+                  <b>K O</b> 
+                  <i class="fa fa-crosshairs" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+            {{else}}
+              {{#if c.damage_boxes.length}}
+              <div class="combat-hud-combatant-damage">
+                <b>DMG:</b>
+                <button {{on "click" (fn this.showDamage c)}} class="btn-link">
+                  {{#each c.damage_boxes as |r index|}}
+                    <i class="fa-solid fa-heart-crack combat-damage-{{index}}" aria-label="Damage Box"></i>
+                  {{/each}}
+                </button>
+              </div>
+             {{/if}}
+          {{/if}}
+          </div>
+        </td>
+        
+        <td>
+            {{c.weapon}} {{c.ammo}}
+        </td>
+        <td>
+            {{c.armor}}
+        </td>
+        
+        <td>
+            {{c.stance}}
+        </td>
+        
+        <td>
+            {{c.action}}
+        </td>
+        
+        <td class="combat-hud-edit">
+            {{#if c.can_edit}}
+              <TooltipButton @position="left" @message="Edit combatant." @icon="fa-solid fa-pen-to-square" @route="combatant-edit" @model={{c.id}} @target="_blank" />
+            {{/if}}
+        </td>
+    </tr>
+    
+    {{/each}}
+  
+
+{{/each}}
+
+    
+</tbody>
+</table>
+
+</div>
+
+<BsModalSimple @title="Damage Report" @closeTitle="Close" @size={{null}} @fade={{true}} @open={{this.damagePopupChar}}  @onHide={{(fn this.showDamage null)}}>
+    <Fs3Damage @damage={{this.damagePopupChar.damage}} @damageMod={{this.damagePopupChar.damage_mod}} />
+    
+</BsModalSimple>
