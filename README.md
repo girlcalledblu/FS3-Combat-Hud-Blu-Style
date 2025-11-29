@@ -3,7 +3,7 @@ This repository gives you all the edits you need to update your FS3 Combat HUD t
 
 The only thing that this repository does not provide you is access to custom Font Awesome icons or Font Awesome Pro icons. You must have a Font Awesome Pro account to utilize custom icons or icons not in their free catalog.
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/girlcalledblu/FS3-Combat-Hud-Blu-Style/blob/main/FS3-Combat-Hud-Example.png)
 
 ## Step 1: Updates to Aresmush
 
