@@ -3,6 +3,8 @@ This repository gives you all the edits you need to update your FS3 Combat HUD t
 
 The only thing that this repository does not provide you is access to custom Font Awesome icons or Font Awesome Pro icons. You must have a Font Awesome Pro account to utilize custom icons or icons not in their free catalog.
 
+![alt text](http://url/to/img.png)
+
 ## Step 1: Updates to Aresmush
 
 In `aresmush/plugins/fs3combat/helpers/general_helper.rb`, you will need to locate the `damage_boxes` on line 281 and update `5` to `6`. So, the final line should look something like this:
