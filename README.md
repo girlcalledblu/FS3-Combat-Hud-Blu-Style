@@ -13,7 +13,9 @@ Once that is done, you will need to `git pull` from the game's client if you use
 
 ## Step 2: Updates to Ares-Webportal
 
-To make this all easier, just replace the entire contents of `ares-webportal/app/components/fs3-combat-hud.hbs` with the file found in this repository. If you are not using GitHub to keep your game up to date, you will want to navigate to the `app/components` folder in the `ares-webportal` directory and run this command to remove the contents of the fs3-combat-hud.hbs file, `truncate -s 0 fs3-combat-hud.hbs`. You will then be able to edit the file using `nano fs3-combat-hud.hbs` and copy and paste the entire contents of the file in this repository into that now empty file.
+To make this all easier, just replace the entire contents of `ares-webportal/app/components/fs3-combat-hud.hbs` with the file found in this repository.
+
+If you are not using GitHub to keep your game up to date, you will want to navigate to the `app/components` folder in the `ares-webportal` directory and run this command to remove the contents of the fs3-combat-hud.hbs file, `truncate -s 0 fs3-combat-hud.hbs`. You will then be able to edit the file using `nano fs3-combat-hud.hbs` and copy and paste the entire contents of the file in this repository into that now empty file.
 
 Once you have updated that file either through GitHub or the shell, you will need to `git pull` from the game if you used git, and run `website/deploy`.
 
