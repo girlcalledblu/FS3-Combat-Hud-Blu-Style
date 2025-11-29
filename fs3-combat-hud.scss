@@ -1,0 +1,63 @@
+// FS3 Combat HUD
+
+.fs3-combat-hud > .table {
+	min-width: 700px;
+}
+
+.table-responsive.fs3-combat-hud {
+	overflow-x: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: $secondary-color $box-background-color;
+}
+
+.combat-header-name {
+	min-width: 150px;
+}
+
+.combat-header-weapon {
+	min-width: 150px;
+}
+
+.combat-header-armor {
+	min-width: 150px;
+}
+
+.combat-header-action {
+	min-width: 150px;
+}
+
+.combat-header-edit {
+	min-width: 30px;
+}
+
+.combat-hud-edit {
+	text-align: center;
+}
+
+.combat-damage-0 {
+	color: $muted-green;
+}
+
+.combat-damage-1 {
+	color: $muted-yellow;
+}
+
+.combat-damage-2 {
+	color: $muted-orange;
+}
+
+.combat-damage-3,
+.combat-damage-4 {
+	color: $muted-red;
+}
+
+.combat-damage-5::before {
+	content: "\e500";
+	font-family: var(--fa-font-solid);
+	color: #c94955;
+}
+
+.combat-hud-ko {
+	color: #c94955;
+	text-weight: bold;
+}
