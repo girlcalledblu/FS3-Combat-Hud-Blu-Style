@@ -1,7 +1,9 @@
 // FS3 Combat HUD
 
-.fs3-combat-hud > .table {
-	min-width: 700px;
+/* Combat HUD */
+
+.table-responsive.fs3-combat-hud > .table {
+	min-width: 1000px;
 }
 
 .table-responsive.fs3-combat-hud {
@@ -22,11 +24,11 @@
 	font: var(--fa-font-solid);
 	content: "\f0c0";
 	margin: 0px 10px 0px 5px;
-	color: $primary-color;
+	color: $secondary-color;
 }
 
 .combat-header-name {
-	min-width: 150px;
+	min-width: 225px;
 }
 
 .combat-header-weapon {
